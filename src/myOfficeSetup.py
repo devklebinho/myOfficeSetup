@@ -1,13 +1,14 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
+import os
 
 urls = [
     "https://web.whatsapp.com/",
-    "https://discord.com/",
+    "https://discord.com/login",
     "https://www.gmail.com",
-    "https://trello.com/",
-    "https://huggingface.co/",
+    "https://trello.com/login",
+    "https://huggingface.co/chat/",
 ]
 
 navegador = webdriver.Chrome()
@@ -25,6 +26,5 @@ for url in urls[1:]:
     navegador.get(url)
     time.sleep(1)  # pausa de 1 segundo entre as abas
 
-# Mantendo o navegador aberto
-while True:
-    pass
+# Encerrando o programa, mas mantendo as abas abertas
+os._exit(0)
